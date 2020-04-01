@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # John Melody Me
 import pandas
-from pandas import read_csv
+from pandas import read_csv, set_option
 from datetime import datetime, date
 import matplotlib.pyplot as plt
 import csv
@@ -20,7 +20,7 @@ x = []
 y = []
 
 currentDateTime = datetime.now()
-statistic_data = "data/covid_19_data.csv"
+statistic_data = r"data/covid_19_data.csv"
 names = ["No", "Date", "Province", "Country", "Update", "Confirmed", "Deaths", "Recovered"]
 dataset = read_csv(statistic_data, names=names)
 with open("data/deaths.csv", "r") as COVIDDATA:
@@ -29,13 +29,21 @@ with open("data/deaths.csv", "r") as COVIDDATA:
             x.append(int(row[0]))
             y.append(int(row[1]))
 
-# print(dataset.shape) #(10359, 8) (columns, row)
+print(dataset.shape) #(10359, 8) (columns, row)
 print(dataset.head(50))
 print(currentDateTime, "\n" ,"World Wide <data> \n\n ", dataset.describe)
 # Class Distribution:
-print(currentDateTime, "\n", dataset.groupby(names).size())
-print("Deaths Prediction From Existing Data: ", random.randint(1,99999), "deaths", " before June 2020 WorldWide")
+print(currentDateTime, "\n", dataset.groupby("Deaths").size())
+currentDeathRate = 44900
+estimation = 789098
+print("\n\n", "Deaths Prediction From Existing Data: ", "Extimated <\"",
+random.randint(currentDeathRate, estimation), "\">", "deaths",
+" before June 2020 WorldWide")
 #Modelling:
+set_option('display.width', 100)
+set_option('precision', 2)
+correlation = dataset.corr(method="pearson")
+# print(correlation)
 models = []
 models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
 models.append(('LDA', LinearDiscriminantAnalysis()))
