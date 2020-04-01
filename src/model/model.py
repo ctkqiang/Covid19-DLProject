@@ -11,9 +11,3 @@ CovidData.head() # show the first few records of the data set
 print(title, "\t", currentDateTime, "\n\n", CovidData)
 print(CovidData.head(n=10), CovidData.tail()) # show the first (n) records of the data set
 print(CovidData.dtypes) # datatypes
-# set the background colour of the plot to white
-sns.set(style="whitegrid", color_codes=True)
-sns.set(rc={'figure.figsize':(11.7,8.27)})
-# create a countplot
-sns.countplot('Deaths',data=sales_data,hue = 'Index')
-sns.despine(offset=10, trim=True)
