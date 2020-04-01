@@ -17,7 +17,6 @@ from sklearn.svm import SVC
 
 x = []
 y = []
-z = []
 
 currentDateTime = datetime.now()
 statistic_data = "data/covid_19_data.csv"
@@ -30,7 +29,7 @@ with open("data/deaths.csv", "r") as COVIDDATA:
             y.append(int(row[1]))
 
 # print(dataset.shape) #(10359, 8) (columns, row)
-# print(dataset.head(50))
+print(dataset.head(50))
 print(currentDateTime, "\n" ,"World Wide <data> \n\n ", dataset.describe)
 # Class Distribution:
 print(currentDateTime, "\n", dataset.groupby(names).size())
@@ -42,6 +41,15 @@ models.append(('KNN', KNeighborsClassifier()))
 models.append(('CART', DecisionTreeClassifier()))
 models.append(('NB', GaussianNB()))
 models.append(('SVM', SVC(gamma='auto')))
+# evaluate each model in turn:
+results = []
+names = []
+# for names, model in models:
+#       kfold = StratifiedKFold((n_splits=10, random_state=1)
+#       cv_results = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
+# 	results.append(cv_results)
+# 	names.append(name)
+# 	print('%s: %f (%f)' %(names, cv_results.mean(), cv_results.std()))
 # Graph:
 plt.title("COVID 19 DEATHS <22 JAN 2020 TO 31 MAC 2020> STATISTICS")
 plt.xlabel("Index")
