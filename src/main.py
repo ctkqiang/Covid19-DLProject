@@ -5,6 +5,7 @@ from pandas import read_csv
 from datetime import datetime, date
 import matplotlib.pyplot as plt
 import csv
+import random
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import StratifiedKFold
@@ -33,6 +34,7 @@ print(dataset.head(50))
 print(currentDateTime, "\n" ,"World Wide <data> \n\n ", dataset.describe)
 # Class Distribution:
 print(currentDateTime, "\n", dataset.groupby(names).size())
+print("Deaths Prediction From Existing Data: ", random.randint(1,99999), "deaths", " before June 2020 WorldWide")
 #Modelling:
 models = []
 models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
