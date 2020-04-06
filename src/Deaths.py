@@ -1,11 +1,27 @@
 #!/usr/bin/env python
-# John Melody Me
+#
+#              Copyright 2020 © John Melody Me
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#             http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# @Author : John Melody Me
+# @Copyright: John Melody Me & Tan Sin Dee © Copyright 2020
+# @INPIREDBYGF: Cindy Tan Sin Dee <3
 import pandas
-from pandas import read_csv, set_option
-from datetime import datetime, date
 import matplotlib.pyplot as plt
 import csv
 import random
+from pandas import read_csv, set_option
+from datetime import datetime, date
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import StratifiedKFold
@@ -61,9 +77,9 @@ names = []
 # 	names.append(name)
 # 	print('%s: %f (%f)' %(names, cv_results.mean(), cv_results.std()))
 # Graph:
-plt.title("COVID 19 DEATHS <22 JAN 2020 TO 31 MAC 2020> STATISTICS")
+plt.title("COVID 19 DEATHS")
 plt.xlabel("Index")
 plt.ylabel("Deaths")
-plt.plot(x,y)
-plt.Line2D(x,y)
+# plt.plot(x,y)
+plt.scatter(x, y)
 plt.show()
