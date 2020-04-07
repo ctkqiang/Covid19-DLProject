@@ -34,7 +34,6 @@ from sklearn.svm import SVC
 
 x = []
 y = []
-
 currentDateTime = datetime.now()
 statistic_data = r"data/covid_19_data.csv"
 names = ["No", "Date", "Province", "Country", "Update", "Confirmed", "Deaths", "Recovered"]
@@ -44,7 +43,6 @@ with open("data/deaths.csv", "r") as COVIDDATA:
       for row in display:
             x.append(int(row[0]))
             y.append(int(row[1]))
-
 print(dataset.shape) #(10359, 8) (columns, row)
 print(dataset.head(50))
 print(currentDateTime, "\n" ,"World Wide <data> \n\n ", dataset.describe)
@@ -59,7 +57,7 @@ random.randint(currentDeathRate, estimation), "\">", "deaths",
 set_option('display.width', 100)
 set_option('precision', 2)
 correlation = dataset.corr(method="pearson")
-# print(correlation)
+print(correlation)
 models = []
 models.append(('LR', LogisticRegression(solver='liblinear', multi_class='ovr')))
 models.append(('LDA', LinearDiscriminantAnalysis()))
