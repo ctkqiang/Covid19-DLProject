@@ -1,1 +1,1 @@
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6653707706249121792" height="441" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+[Click Here to Watch the Intro](https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6653707706249121792)
