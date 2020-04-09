@@ -61,7 +61,6 @@ impute_covid['Deaths'] = pd.to_numeric(impute_covid['Deaths'], errors='coerce')
 filename = "data/Dataset/COVID19_line_list_data.csv"
 open_covid_data = pd.read_csv(filename)
 print(open_covid_data.info())
-
 mis_value = open_covid_data.isnull().sum()
 mis_value[mis_value > 0 ]
 # thresh_value = open_covid_data['date_confirmation'].isnull().sum()
