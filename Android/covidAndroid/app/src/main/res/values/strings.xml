@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Covid19</string>
+    <string name="DeathRateURL">https://github.com/johnmelodyme/Covid19-DLProject/blob/master/data/deaths.csv</string>
+</resources>
